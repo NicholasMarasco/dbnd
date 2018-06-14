@@ -129,7 +129,7 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
-# mkdocs documentation
+# mkdocs
 /site
 
 # mypy
@@ -219,3 +219,4 @@ $RECYCLE.BIN/
 
 
 # End of https://www.gitignore.io/api/vim,sass,venv,linux,django,python,windows,database,sublimetext
+pip-selfcheck.json
