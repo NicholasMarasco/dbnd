@@ -30,7 +30,7 @@ except OSError as err:
     print('\t' + err, file=sys.stderr)
 
 
-SECRET_KEY = DATA["SECRET_KEY"]
+SECRET_KEY = DATA['SECRET_KEY']
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -86,11 +86,14 @@ WSGI_APPLICATION = 'dbnd.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# When DB is decided, add auth info to .env and grab from DATA in this file
+# Add postgreSQL user to .env once that's all set up
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.path.join(BASE_DIR, 'db.postgresql'),
+        'USER': DATA['USER'],
+        'PASSWORD': DATA['PASSWORD'],
+        'HOST': DATA['HOST'],
     }
 }
 
